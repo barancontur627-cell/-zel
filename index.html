@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TÜBİTAK Eğitici İçerik Portalı (5-8. Sınıf)</title>
+    <!-- Tailwind CSS'i yüklüyoruz -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Ana font ayarı */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Özel kenarlık rengi için bir Tailwind sınıfı oluşturuyoruz */
+        .border-tubitak {
+            border-top: 4px solid #10b981; /* Zümrüt yeşili */
+        }
+        /* Simülasyon Canvas'ı için stil */
+        #atomCanvas {
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            width: 100%;
+            height: 400px;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+    <!-- Başlık ve Giriş Alanı -->
+    <header class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <h1 class="text-3xl font-extrabold text-gray-900 mb-2 md:mb-0">
+                    TÜBİTAK Eğitici İçerik Portalı
+                </h1>
+                <p class="text-base text-gray-500">
+                    5, 6, 7 ve 8. Sınıf Çok Konulu Öğrenme Modülleri
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Ana İçerik Alanı (Duyarlı Grid Sistemi) -->
+    <main class="max-w-7xl mx-auto py-8 sm:px-6 lg:px-8">
+        
+        <!-- MATEMATİK MODÜLÜ -->
+        <section class="mb-10">
+            <h2 class="text-4xl font-bold text-blue-700 mb-6 border-b-4 border-blue-500 pb-2">
+                Matematik Öğrenme Alanı
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 5. Sınıf Matematik Kartı (QUIZ) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-tubitak hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">5. Sınıf: Kesirler ve Ondalık Gösterimler</h3>
+                    <p class="text-gray-700 mb-4">
+                        Ondalık gösterimleri kesirlere, kesirleri ondalık gösterimlere nasıl çevirebileceğini öğren.
+                    </p>
+                    <a href="javascript:void(0)" onclick="showQuiz('kesirler_ondalik')" class="inline-block bg-pink-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-pink-700 transition duration-150">Hemen Quize Başla!</a>
+                </div>
+
+                <!-- 6. Sınıf Matematik Kartı (Quiz Mevcut) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-tubitak hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">6. Sınıf: Asal Sayılar ve Ortak Bölenler</h3>
+                    <p class="text-gray-700 mb-4">
+                        EBOB ve EKOK kavramlarını öğren. En küçük asal sayının $2$ olduğunu unutma.
+                    </p>
+                    <a href="javascript:void(0)" onclick="showQuiz('asal_sayilar')" class="inline-block bg-pink-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-pink-700 transition duration-150">Hemen Quize Başla!</a>
+                </div>
+
+                <!-- 7. Sınıf Matematik Kartı (QUIZ) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-tubitak hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">7. Sınıf: Cebirsel İfadeler ve Denklemler</h3>
+                    <p class="text-gray-700 mb-4">
+                        Birinci dereceden bir bilinmeyenli denklemleri adım adım çözmeyi öğren.
+                    </p>
+                    <a href="javascript:void(0)" onclick="showQuiz('cebirsel_denklemler')" class="inline-block bg-pink-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-pink-700 transition duration-150">Hemen Quize Başla!</a>
+                </div>
+
+                <!-- 8. Sınıf Matematik Kartı (QUIZ) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-tubitak hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">8. Sınıf: Pisagor Teoremi ve Üçgenler</h3>
+                    <p class="text-gray-700 mb-2">
+                        Dik üçgenlerde kenar uzunlukları arasındaki ilişki:
+                    </p>
+                    <div class="bg-blue-50 p-3 rounded-md text-center text-xl font-mono my-2">
+                        $$a^2 + b^2 = c^2$$
+                    </div>
+                    <a href="javascript:void(0)" onclick="showQuiz('pisagor_teoremi')" class="inline-block bg-pink-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-pink-700 transition duration-150">Hemen Quize Başla!</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEN BİLİMLERİ MODÜLÜ -->
+        <section class="mb-10 mt-12">
+            <h2 class="text-4xl font-bold text-green-700 mb-6 border-b-4 border-green-500 pb-2">
+                Fen Bilimleri Öğrenme Alanı
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- 5. Sınıf Fen Kartı (YENİ - YAKINDA) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-tubitak hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                    <h3 class="text-2xl font-bold text-green-600 mb-2">5. Sınıf: Işığın Yayılması</h3>
+                    <p class="text-gray-700 mb-4">
+                        Işığın doğrusal yollarla yayıldığını ve yansıma/emilme olaylarını öğren.
+                    </p>
+                    <a href="#" class="inline-block bg-gray-400 text-white px-4 py-2 rounded-lg text-sm font-semibold cursor-not-allowed">Quiz (Yakında)</a>
+                </div>
+
+                <!-- 6. Sınıf Fen Kartı (QUIZ) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-tubitak hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                    <h3 class="text-2xl font-bold text-green-600 mb-2">6. Sınıf: Vücudumuzdaki Sistemler</h3>
+                    <p class="text-gray-700 mb-4">
+                        Dolaşım, sindirim ve solunum sistemlerinin temel görevlerini interaktif şemalarla öğren.
+                    </p>
+                    <a href="javascript:void(0)" onclick="showQuiz('vucudumuzdaki_sistemler')" class="inline-block bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition duration-150">Hemen Quize Başla!</a>
+                </div>
+                
+                <!-- 8. Sınıf Fen Kartı (SİMÜLASYON) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-tubitak hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                    <h3 class="text-2xl font-bold text-green-600 mb-2">8. Sınıf: Periyodik Sistem ve Atom</h3>
+                    <p class="text-gray-700 mb-4">
+                        Elementlerin periyodik tablodaki yerleşimi ve atom yapısını keşfet.
+                    </p>
+                    <a href="javascript:void(0)" onclick="showSimulation('atom_modeli')" class="inline-block bg-yellow-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-yellow-700 transition duration-150">Atom Modeli Simülasyonu</a>
+                </div>
+                
+            </div>
+        </section>
+        
+        <!-- TÜRKÇE MODÜLÜ -->
+        <section class="mb-10 mt-12">
+            <h2 class="text-4xl font-bold text-red-700 mb-6 border-b-4 border-red-500 pb-2">
+                Türkçe Öğrenme Alanı
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- 7. Sınıf Türkçe Kartı (QUIZ) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-tubitak hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                    <h3 class="text-2xl font-bold text-red-600 mb-2">7. Sınıf: Fiillerde Çatı</h3>
+                    <p class="text-gray-700 mb-4">
+                        Özne-yüklem (etken, edilgen) ve nesne-yüklem (geçişli, geçişsiz) ilişkisine göre çatıları öğren.
+                    </p>
+                    <a href="javascript:void(0)" onclick="showQuiz('fiillerde_cati')" class="inline-block bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-red-700 transition duration-150">Hemen Quize Başla!</a>
+                </div>
+
+                <!-- 8. Sınıf Türkçe Kartı (QUIZ EKLENDİ) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-tubitak hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                    <h3 class="text-2xl font-bold text-red-600 mb-2">8. Sınıf: Anlatım Bozuklukları</h3>
+                    <p class="text-gray-700 mb-4">
+                        Anlamsal ve yapısal anlatım bozukluklarını ayırt etme ve düzeltme becerilerini geliştir.
+                    </p>
+                    <a href="javascript:void(0)" onclick="showQuiz('anlatim_bozukluklari')" class="inline-block bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-red-700 transition duration-150">Hemen Quize Başla!</a>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- SOSYAL BİLGİLER MODÜLÜ (YENİ) -->
+        <section class="mb-10 mt-12">
+            <h2 class="text-4xl font-bold text-orange-700 mb-6 border-b-4 border-orange-500 pb-2">
+                Sosyal Bilgiler Öğrenme Alanı
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- 5. Sınıf Sosyal Kartı (QUIZ EKLENDİ) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-tubitak hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                    <h3 class="text-2xl font-bold text-orange-600 mb-2">5. Sınıf: Kültür ve Miras</h3>
+                    <p class="text-gray-700 mb-4">
+                        Türk ve dünya kültüründeki ortak mirasları, gelenek ve göreneklerimizi öğren.
+                    </p>
+                    <a href="javascript:void(0)" onclick="showQuiz('sosyal_kulturler')" class="inline-block bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-700 transition duration-150">Hemen Quize Başla!</a>
+                </div>
+
+                <!-- 7. Sınıf Sosyal Kartı (YAKINDA) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-tubitak hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                    <h3 class="text-2xl font-bold text-orange-600 mb-2">7. Sınıf: İnsanlar ve Çevre</h3>
+                    <p class="text-gray-700 mb-4">
+                        Doğal ortamın insan yaşamına etkileri ve coğrafi keşiflerin sonuçları.
+                    </p>
+                    <a href="#" class="inline-block bg-gray-400 text-white px-4 py-2 rounded-lg text-sm font-semibold cursor-not-allowed">Quiz (Yakında)</a>
+                </div>
+                
+            </div>
+        </section>
+        
+        <!-- İNGİLİZCE MODÜLÜ (YENİ) -->
+        <section class="mb-10 mt-12">
+            <h2 class="text-4xl font-bold text-violet-700 mb-6 border-b-4 border-violet-500 pb-2">
+                İngilizce Öğrenme Alanı
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- 6. Sınıf İngilizce Kartı (QUIZ EKLENDİ) -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-tubitak hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                    <h3 class="text-2xl font-bold text-violet-600 mb-2">6. Sınıf: Simple Present Tense</h3>
+                    <p class="text-gray-700 mb-4">
+                        Geniş zamanın ($V_1$/$V_{s/es}$) temel kural ve kullanımlarını interaktif testlerle pekiştir.
+                    </p>
+                    <a href="javascript:void(0)" onclick="showQuiz('ingilizce_genis_zaman')" class="inline-block bg-violet-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-violet-700 transition duration-150">Hemen Quize Başla!</a>
+                </div>
+                
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            TÜBİTAK Proje Örneği | Eğitici İçerik Geliştirme | Tüm Hakları Saklıdır &copy; 2024
+        </div>
+    </footer>
+
+    <!-- QUIZ MODAL YAPISI -->
+    <div id="quizModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden items-center justify-center p-4 z-50 overflow-y-auto">
+        <!-- max-w-xl yerine max-w-lg kullanıldı -->
+        <div class="bg-white rounded-xl shadow-2xl max-w-lg w-full p-8 relative my-8 transform transition-all duration-300 scale-95 opacity-0" id="quizContainer">
+            <h3 id="quizTitle" class="text-3xl font-extrabold mb-6 border-b-2 pb-2"></h3>
+            
+            <form id="quizForm">
+                <div id="quizContent" class="space-y-6">
+                    <!-- Sorular buraya JS ile yüklenecek -->
+                </div>
+            </form>
+
+            <div id="quizResults" class="hidden mt-6 p-4 rounded-xl text-lg font-semibold text-center transition-all duration-500"></div>
+            
+            <div class="flex justify-end space-x-4 mt-8">
+                <button onclick="submitQuiz()" id="submitButton" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition duration-150 shadow-lg disabled:opacity-50" disabled>Cevapları Gönder</button>
+                <button onclick="closeQuizModal()" class="bg-gray-300 text-gray-800 px-6 py-3 rounded-xl font-bold hover:bg-gray-400 transition duration-150 shadow-lg">Kapat</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SİMÜLASYON MODAL YAPISI -->
+    <div id="simulationModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden items-center justify-center p-4 z-50 overflow-y-auto">
+        <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full p-8 relative my-8 transform transition-all duration-300 scale-95 opacity-0" id="simulationContainer">
+            <h3 id="simTitle" class="text-3xl font-extrabold text-green-700 mb-6 border-b-2 border-green-500 pb-2"></h3>
+            
+            <div id="simContent" class="space-y-4">
+                <!-- Atom Simülasyonu Kontrolleri -->
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 items-center p-4 bg-gray-100 rounded-lg">
+                    <label for="atomicNumber" class="text-gray-700 font-medium whitespace-nowrap">Atom Numarası (Z):</label>
+                    <input type="number" id="atomicNumber" value="11" min="1" max="20" class="w-full sm:w-32 p-2 border rounded-md text-center" onchange="drawAtomModel(parseInt(this.value))" onkeyup="drawAtomModel(parseInt(this.value))">
+                    <button onclick="drawAtomModel(parseInt(document.getElementById('atomicNumber').value))" class="w-full sm:w-auto bg-yellow-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-yellow-700 transition duration-150">Modeli Çiz</button>
+                    <span id="elementName" class="text-xl font-bold text-gray-800"></span>
+                </div>
+
+                <!-- Simülasyon Alanı -->
+                <canvas id="atomCanvas" width="700" height="400"></canvas>
+                <p class="text-sm text-gray-500 text-center">Çizilen model, ilk 20 element için elektron dizilimini göstermektedir.</p>
+            </div>
+
+            <div class="flex justify-end space-x-4 mt-8">
+                <button onclick="closeSimulationModal()" class="bg-gray-300 text-gray-800 px-6 py-3 rounded-xl font-bold hover:bg-gray-400 transition duration-150 shadow-lg">Kapat</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        // Quiz ID'lerini renk sınıflarına eşler (modal başlığı için)
+        const quizColors = {
+            'asal_sayilar': 'text-blue-700 border-blue-500', 
+            'kesirler_ondalik': 'text-blue-700 border-blue-500', 
+            'cebirsel_denklemler': 'text-blue-700 border-blue-500', 
+            'pisagor_teoremi': 'text-blue-700 border-blue-500', 
+            'vucudumuzdaki_sistemler': 'text-green-700 border-green-500', 
+            'fiillerde_cati': 'text-red-700 border-red-500',
+            'anlatim_bozukluklari': 'text-red-700 border-red-500', // Yeni
+            'sosyal_kulturler': 'text-orange-700 border-orange-500', // Yeni
+            'ingilizce_genis_zaman': 'text-violet-700 border-violet-500', // Yeni
+        };
+
+        // --- QUIZ VERİ YAPISI (Genişletilmiş) ---
+        const quizzes = {
+            'asal_sayilar': {
+                title: "6. Sınıf Quiz: Asal Sayılar ve Ortak Bölenler",
+                questions: [
+                    { question: "Aşağıdaki sayılardan hangisi bir asal sayı **değildir**?", options: ["17", "23", "39", "47"], answerIndex: 2 }, 
+                    { question: "20 ve 30 sayılarının En Büyük Ortak Böleni (EBOB) kaçtır?", options: ["5", "10", "60", "30"], answerIndex: 1 },
+                    { question: "İki basamaklı en küçük asal sayı kaçtır?", options: ["10", "11", "13", "17"], answerIndex: 1 },
+                    { question: "En küçük asal sayı kaçtır?", options: ["0", "1", "2", "3"], answerIndex: 2 }
+                ]
+            },
+            'kesirler_ondalik': {
+                title: "5. Sınıf Quiz: Kesirler ve Ondalık Gösterimler",
+                questions: [
+                    { question: "1/4 kesrinin ondalık gösterimi nedir?", options: ["0.4", "1.4", "0.25", "0.5"], answerIndex: 2 },
+                    { question: "1.25 ondalık gösterimi hangi tam sayılı kesre eşittir?", options: ["1 tam 2/5", "1 tam 1/4", "1 tam 1/2", "1 tam 3/4"], answerIndex: 1 },
+                    { question: "0.08 ondalık gösterimi hangi kesre eşittir?", options: ["8/10", "8/100", "80/100", "8/1000"], answerIndex: 1 }
+                ]
+            },
+            'cebirsel_denklemler': {
+                title: "7. Sınıf Quiz: Cebirsel İfadeler ve Denklemler",
+                questions: [
+                    { question: "3x + 5 cebirsel ifadesinde değişken (bilinmeyen) nedir?", options: ["3", "5", "3x", "x"], answerIndex: 3 },
+                    { question: "2x + 7 = 15 denkleminde x değeri kaçtır?", options: ["4", "8", "11", "2"], answerIndex: 0 },
+                    { question: "Bir sayının 3 katının 2 fazlası 17'dir. Bu sayı kaçtır?", options: ["5", "6", "7", "8"], answerIndex: 0 }
+                ]
+            },
+            'pisagor_teoremi': {
+                title: "8. Sınıf Quiz: Pisagor Teoremi",
+                questions: [
+                    { question: "Bir dik üçgenin dik kenarları 3 cm ve 4 cm ise, hipotenüs kaç cm'dir?", options: ["7", "Kök 7", "5", "Kök 12"], answerIndex: 2 },
+                    { question: "Pisagor Teoremi hangi üçgen türü için kullanılır?", options: ["İkizkenar üçgen", "Eşkenar üçgen", "Dik üçgen", "Geniş açılı üçgen"], answerIndex: 2 },
+                    { question: "Hipotenüsü 10 cm ve bir dik kenarı 6 cm olan üçgenin diğer dik kenarı kaç cm'dir?", options: ["4", "8", "12", "16"], answerIndex: 1 }
+                ]
+            },
+            'vucudumuzdaki_sistemler': {
+                title: "6. Sınıf Quiz: Vücudumuzdaki Sistemler",
+                questions: [
+                    { question: "Oksijenin kana karışmasını sağlayan temel sistem hangisidir?", options: ["Dolaşım Sistemi", "Sindirim Sistemi", "Solunum Sistemi", "Boşaltım Sistemi"], answerIndex: 2 },
+                    { question: "Kanın vücutta dolaşımını sağlayan organ nedir?", options: ["Mide", "Akciğer", "Karaciğer", "Kalp"], answerIndex: 3 },
+                    { question: "Besinlerin kimyasal sindiriminin başladığı organ hangisidir?", options: ["Mide", "Yemek Borusu", "Ağız", "Kalın Bağırsak"], answerIndex: 0 }
+                ]
+            },
+            'fiillerde_cati': {
+                title: "7. Sınıf Quiz: Fiillerde Çatı",
+                questions: [
+                    { question: "\"Hava aniden soğudu.\" cümlesindeki fiil çatısı nedir?", options: ["Edilgen", "Geçişli", "Etken", "Dönüşlü"], answerIndex: 2 },
+                    { question: "Aşağıdaki cümlelerin hangisinde fiil çatısı **edilgendir**?", options: ["Öğrenci kitabı okudu.", "Duvarlar boyandı.", "Çocuk hızla koştu.", "Annem yemek yapıyor."], answerIndex: 1 },
+                    { question: "\"Ceketini astı.\" cümlesinde fiil, nesne alabilme durumuna göre hangi çatıdadır?", options: ["Geçişsiz", "Edilgen", "Geçişli", "Dönüşlü"], answerIndex: 2 }
+                ]
+            },
+            'anlatim_bozukluklari': {
+                title: "8. Sınıf Quiz: Anlatım Bozuklukları",
+                questions: [
+                    { question: "\"Gözleri doldu, hatta ağladı bile.\" cümlesindeki anlatım bozukluğu türü nedir?", options: ["Gereksiz sözcük kullanımı", "Anlamca çelişen sözcükler", "Sözcüğün yanlış yerde kullanılması", "Özne eksikliği"], answerIndex: 1 },
+                    { question: "Hangi cümlede mantık hatası vardır?", options: ["Gelecek hafta yurt dışına çıkacak.", "İlk kez bu kadar başarılı oldu.", "Bırakın yumurta kırmayı, omlet bile yapamaz.", "Sana yardım etmeyi çok istiyorum."], answerIndex: 2 },
+                    { question: "Hangi cümlede gereksiz sözcük kullanılmıştır?", options: ["Geri iade etti.", "O çok başarılı bir öğrencidir.", "Bana hemen gel dedi.", "Onu uzun zamandır görmemiştim."], answerIndex: 0 }
+                ]
+            },
+            'sosyal_kulturler': {
+                title: "5. Sınıf Quiz: Kültür ve Miras",
+                questions: [
+                    { question: "Aşağıdakilerden hangisi kültürel miras ögesi **değildir**?", options: ["Halı dokumacılığı", "Halk oyunları", "Gökyüzü", "Nasreddin Hoca fıkraları"], answerIndex: 2 },
+                    { question: "UNESCO tarafından koruma altına alınan doğal ve kültürel varlıklara ne ad verilir?", options: ["Müze", "Anıt", "Dünya Mirası", "Ulusal Park"], answerIndex: 2 },
+                    { question: "Kültürün temel unsurlarından biri aşağıdakilerden hangisidir?", options: ["Trafik ışıkları", "Dil", "Cep telefonu", "Fabrika"], answerIndex: 1 }
+                ]
+            },
+            'ingilizce_genis_zaman': {
+                title: "6. Sınıf Quiz: Simple Present Tense",
+                questions: [
+                    { question: "She always _______ (go) to school by bus.", options: ["go", "goes", "is going", "went"], answerIndex: 1 },
+                    { question: "We _______ (not / like) doing homework.", options: ["not like", "don't like", "doesn't like", "aren't like"], answerIndex: 1 },
+                    { question: "_______ he _______ (play) football on Sundays?", options: ["Does / plays", "Do / play", "Does / play", "Is / playing"], answerIndex: 2 },
+                    { question: "The sun _______ (rise) in the east.", options: ["rises", "rise", "rose", "is rising"], answerIndex: 0 }
+                ]
+            }
+        };
+        
+        let activeQuizId = null;
+
+        // --- QUIZ MODAL FONKSİYONLARI ---
+
+        function showQuiz(quizId) {
+            activeQuizId = quizId;
+            const quizData = quizzes[quizId];
+            const modal = document.getElementById('quizModal');
+            const container = document.getElementById('quizContainer');
+            const content = document.getElementById('quizContent');
+            const title = document.getElementById('quizTitle');
+            const results = document.getElementById('quizResults');
+            const submitButton = document.getElementById('submitButton');
+
+            content.innerHTML = '';
+            results.classList.add('hidden');
+            results.innerHTML = '';
+            submitButton.disabled = true;
+            
+            title.textContent = quizData.title;
+            // Dinamik olarak rengi ayarla
+            title.className = `text-3xl font-extrabold mb-6 border-b-2 pb-2 ${quizColors[quizId] || 'text-pink-700 border-pink-500'}`;
+
+            quizData.questions.forEach((q, qIndex) => {
+                const questionElement = document.createElement('div');
+                questionElement.className = 'p-4 border border-gray-200 rounded-lg shadow-sm bg-white';
+                
+                const questionText = document.createElement('p');
+                questionText.className = 'font-semibold text-lg text-gray-800 mb-3';
+                questionText.textContent = `${qIndex + 1}. ${q.question}`;
+                questionElement.appendChild(questionText);
+
+                const optionsDiv = document.createElement('div');
+                optionsDiv.className = 'space-y-2';
+
+                q.options.forEach((option, oIndex) => {
+                    const optionId = `q${qIndex}_o${oIndex}`;
+                    const radioName = `question_${qIndex}`;
+                    
+                    const label = document.createElement('label');
+                    label.htmlFor = optionId;
+                    label.className = 'flex items-center p-2 rounded-md cursor-pointer hover:bg-blue-50 transition duration-100';
+                    
+                    const input = document.createElement('input');
+                    input.type = 'radio';
+                    input.name = radioName;
+                    input.id = optionId;
+                    input.value = oIndex;
+                    input.className = 'form-radio h-4 w-4 text-blue-600';
+                    input.addEventListener('change', checkCompletion); 
+
+                    const span = document.createElement('span');
+                    span.className = 'ml-3 text-gray-700';
+                    span.textContent = option;
+
+                    label.appendChild(input);
+                    label.appendChild(span);
+                    optionsDiv.appendChild(label);
+                });
+
+                questionElement.appendChild(optionsDiv);
+                content.appendChild(questionElement);
+            });
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => {
+                container.classList.remove('scale-95', 'opacity-0');
+            }, 10); 
+        }
+
+        function checkCompletion() {
+            const quizData = quizzes[activeQuizId];
+            const form = document.getElementById('quizForm');
+            let answeredCount = 0;
+            
+            quizData.questions.forEach((_, qIndex) => {
+                const radioName = `question_${qIndex}`;
+                const checked = form.querySelector(`input[name="${radioName}"]:checked`);
+                if (checked) {
+                    answeredCount++;
+                }
+            });
+
+            const submitButton = document.getElementById('submitButton');
+            if (answeredCount === quizData.questions.length) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+
+        function submitQuiz() {
+            if (!activeQuizId) return;
+
+            const quizData = quizzes[activeQuizId];
+            const form = document.getElementById('quizForm');
+            const resultsDiv = document.getElementById('quizResults');
+            let score = 0;
+            
+            quizData.questions.forEach((q, qIndex) => {
+                const radioName = `question_${qIndex}`;
+                const selected = form.querySelector(`input[name="${radioName}"]:checked`);
+                
+                if (selected && parseInt(selected.value) === q.answerIndex) {
+                    score++;
+                }
+            });
+
+            const totalQuestions = quizData.questions.length;
+            const percentage = (score / totalQuestions) * 100;
+
+            let resultMessage = `Tebrikler! ${totalQuestions} sorudan ${score} tanesini doğru cevapladınız.`;
+            let resultClass = 'bg-yellow-100 text-yellow-800 border-yellow-500';
+
+            if (percentage === 100) {
+                resultMessage += ' Mükemmel! Konuyu tamamen kavramışsın.';
+                resultClass = 'bg-green-100 text-green-800 border-green-500';
+            } else if (percentage >= 50) {
+                resultMessage += ' İyi bir sonuç! Tekrar etmen gereken bazı noktalar olabilir.';
+                resultClass = 'bg-blue-100 text-blue-800 border-blue-500';
+            } else {
+                resultMessage += ' Birkaç konuya daha çalışman gerekiyor. Vazgeçme!';
+                resultClass = 'bg-red-100 text-red-800 border-red-500';
+            }
+            
+            resultsDiv.className = `mt-6 p-4 rounded-xl text-lg font-semibold text-center border-2 ${resultClass} transition-all duration-500`;
+            resultsDiv.textContent = resultMessage;
+            resultsDiv.classList.remove('hidden');
+
+            document.getElementById('submitButton').disabled = true; 
+        }
+
+        function closeQuizModal() {
+            const modal = document.getElementById('quizModal');
+            const container = document.getElementById('quizContainer');
+            
+            container.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+                activeQuizId = null;
+            }, 300); 
+        }
+
+        // --- SİMÜLASYON FONKSİYONLARI: Atom Modeli Çizici ---
+
+        const elements = {
+            1: "Hidrojen (H)", 2: "Helyum (He)", 3: "Lityum (Li)", 4: "Berilyum (Be)", 5: "Bor (B)", 
+            6: "Karbon (C)", 7: "Azot (N)", 8: "Oksijen (O)", 9: "Flor (F)", 10: "Neon (Ne)",
+            11: "Sodyum (Na)", 12: "Magnezyum (Mg)", 13: "Alüminyum (Al)", 14: "Silisyum (Si)", 15: "Fosfor (P)",
+            16: "Kükürt (S)", 17: "Klor (Cl)", 18: "Argon (Ar)", 19: "Potasyum (K)", 20: "Kalsiyum (Ca)"
+        };
+        
+        // Elektron kabuğu kapasiteleri (ilk 4 periyot için)
+        const shellCapacities = [2, 8, 8, 2]; 
+
+        function showSimulation(simId) {
+            if (simId === 'atom_modeli') {
+                const modal = document.getElementById('simulationModal');
+                const container = document.getElementById('simulationContainer');
+                const title = document.getElementById('simTitle');
+                
+                title.textContent = "Atom Modeli Simülasyonu: İlk 20 Element";
+
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                
+                setTimeout(() => {
+                    container.classList.remove('scale-95', 'opacity-0');
+                    // Simülasyon açıldığında varsayılan atomu çiz
+                    drawAtomModel(parseInt(document.getElementById('atomicNumber').value));
+                }, 10); 
+            }
+        }
+
+        function closeSimulationModal() {
+            const modal = document.getElementById('simulationModal');
+            const container = document.getElementById('simulationContainer');
+            
+            container.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }, 300); 
+        }
+
+        function drawAtomModel(atomicNumber) {
+            const canvas = document.getElementById('atomCanvas');
+            // Canvas'ın HTML boyutlarını alıp, çizim boyutlarını ayarlıyoruz (Duyarlılık için)
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            const ctx = canvas.getContext('2d');
+            const W = canvas.width;
+            const H = canvas.height;
+            const centerX = W / 2;
+            const centerY = H / 2;
+            let remainingElectrons = atomicNumber;
+
+            // Giriş kontrolü
+            if (isNaN(atomicNumber) || atomicNumber < 1 || atomicNumber > 20) {
+                ctx.clearRect(0, 0, W, H);
+                ctx.fillStyle = '#ef4444';
+                ctx.font = '24px Inter';
+                ctx.textAlign = 'center';
+                ctx.fillText('Lütfen 1 ile 20 arasında bir Atom Numarası girin.', centerX, centerY);
+                document.getElementById('elementName').textContent = "";
+                return;
+            }
+
+            // Temizle
+            ctx.clearRect(0, 0, W, H);
+
+            // Element Adını Güncelle
+            document.getElementById('elementName').textContent = elements[atomicNumber] || "Bilinmiyor";
+
+            // 1. Çekirdeği Çiz (Nükleus)
+            const nucleusRadius = 30;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, nucleusRadius, 0, Math.PI * 2);
+            ctx.fillStyle = '#10b981'; // Yeşil
+            ctx.fill();
+            ctx.strokeStyle = '#059669';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Çekirdek metni
+            ctx.fillStyle = 'white';
+            ctx.font = '16px Inter';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(`Z=${atomicNumber}`, centerX, centerY);
+            
+            let radius = nucleusRadius + 30; // İlk kabuk mesafesi
+            
+            // 2. Kabukları ve Elektronları Çiz
+            for (let i = 0; i < shellCapacities.length; i++) {
+                if (remainingElectrons <= 0) break;
+
+                const capacity = shellCapacities[i];
+                const electronsInShell = Math.min(capacity, remainingElectrons);
+                remainingElectrons -= electronsInShell;
+
+                radius += 40; // Kabuklar arası mesafe
+
+                // Kabuğu Çiz
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+                ctx.strokeStyle = '#60a5fa'; // Mavi
+                ctx.lineWidth = 1;
+                ctx.stroke();
+
+                // Kabuk Numarası
+                ctx.fillStyle = '#60a5fa';
+                ctx.font = '12px Inter';
+                ctx.fillText((i + 1), centerX + radius - 5, centerY - 5);
+
+                // Elektronları Çiz
+                for (let j = 0; j < electronsInShell; j++) {
+                    // Elektron açısını hesapla (düzgün dağıtım için)
+                    const angle = (j / electronsInShell) * Math.PI * 2;
+                    const x = centerX + radius * Math.cos(angle);
+                    const y = centerY + radius * Math.sin(angle);
+
+                    // Elektronu Çiz (Proton sayısına eşit olduğu için nötr atom)
+                    ctx.beginPath();
+                    ctx.arc(x, y, 5, 0, Math.PI * 2);
+                    ctx.fillStyle = '#f97316'; // Turuncu (Elektron)
+                    ctx.fill();
+                }
+            }
+
+            if (remainingElectrons > 0) {
+                console.error("20'den büyük atom numarası denendi.");
+            }
+        }
+    </script>
+</body>
+</html>
